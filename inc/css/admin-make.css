@@ -1,0 +1,80 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.main{
+
+}
+
+.header{
+	height: 70px;
+	background-color: #009688;
+}
+
+.left-header{
+	text-align: left;
+	color: #CCEAE7;
+}
+
+.right-header{
+	text-align: right;
+	display: inline-block;
+	color: #CCEAE7;
+
+}
+
+.right-header h3{
+	display: inline-block;
+}
+
+.right-header a span{
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.main-body{
+
+}
+
+.left-body{
+	background-color: #05564f;
+	height: 100vh;
+	text-align: center;
+	
+}
+
+.left-body a{
+	text-decoration: none;
+	color: #CCEAE7;
+}
+
+.left-body a:hover{
+	color: white;
+}
+
+.make-admin{
+	text-align: center;
+	/*border:2px solid red;*/
+}
+
+.make-admin input{
+	margin-top: 10px;
+}
+
+.del-admin{
+	text-align: center;
+	background-color: lightgrey;
+	padding-bottom: 3%;
+}
+
+.man-del{
+	/*border-top: 2px dotted coral;*/
+	border-bottom: 2px dotted black;
+}
+
+.man-del a{
+	margin-bottom: 3%;
+}

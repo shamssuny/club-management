@@ -1,0 +1,19 @@
+.main{
+	height: 100vh;
+	background: url('../img/banner1.jpg');
+	background-size: cover;
+}
+
+.login-area{
+	width: 60%;
+	background-color: lightgrey;
+	border:5px solid #009688;
+	border-radius: 10px;
+	padding: 3%;
+	text-align: center;
+	margin: 10% auto;
+}
+
+.login-area input{
+	margin-top:10px;
+}

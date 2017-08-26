@@ -1,0 +1,66 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.main{
+
+}
+
+.header{
+	height: 70px;
+	background-color: #009688;
+}
+
+.left-header{
+	text-align: left;
+	color: #CCEAE7;
+}
+
+.right-header{
+	text-align: right;
+	display: inline-block;
+	color: #CCEAE7;
+
+}
+
+.right-header h3{
+	display: inline-block;
+}
+
+.right-header a span{
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.main-body{
+
+}
+
+.left-body{
+	background-color: #05564f;
+	height: 100vh;
+	text-align: center;
+	
+}
+
+.left-body a{
+	text-decoration: none;
+	color: #CCEAE7;
+}
+
+.left-body a:hover{
+	color: white;
+}
+
+.give-notice input,textarea{
+	margin-top: 10px;
+}
+
+
+.notice-detail{
+	border: 2px dotted black;
+	padding: 10px;
+}

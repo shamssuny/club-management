@@ -1,0 +1,157 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.main{
+
+}
+
+.header{
+	height: 70px;
+	background-color: #009688;
+}
+
+.left-header{
+	text-align: left;
+	color: #CCEAE7;
+}
+
+.right-header{
+	text-align: right;
+	display: inline-block;
+	color: #CCEAE7;
+
+}
+
+.right-header h3{
+	display: inline-block;
+}
+
+.right-header a span{
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.main-body{
+
+}
+
+.left-body{
+	background-color: #05564f;
+	height: 100vh;
+	text-align: center;
+	
+}
+
+.left-body a{
+	text-decoration: none;
+	color: #CCEAE7;
+}
+
+.left-body a:hover{
+	color: white;
+}
+
+.right-body a{
+	text-decoration: none;
+	color: white;
+}
+
+.notice{
+	background-color: #00B05B;
+	height: 150px;
+	margin-top: 20px;
+	/*border: 2px solid red;*/
+	text-align: center;
+	border-radius: 20px 0px 20px 0px;
+	transition: all 0.5s;
+}
+
+.notice:hover{
+	border-radius: 20px;
+	box-shadow: 0px 5px 28px 2px rgba(0,0,0,0.75);
+}
+
+.front-site{
+	background-color: #FE9800;
+	height: 150px;
+	margin-top: 20px;
+	margin-left: 15px;
+	/*border: 2px solid red;*/
+	text-align: center;
+	border-radius: 20px 0px 20px 0px;
+	transition: all 0.5s;
+
+}
+
+.front-site:hover{
+	border-radius: 20px;
+	box-shadow: 0px 5px 28px 2px rgba(0,0,0,0.75);
+}
+
+.users{
+	background-color: #ED2723;
+	height: 150px;
+	margin-top: 20px;
+	margin-left: 15px;
+	/*border: 2px solid red;*/
+	text-align: center;
+	border-radius: 20px 0px 20px 0px;
+	transition: all 0.5s;
+
+}
+
+.users:hover{
+	border-radius: 20px;
+	box-shadow: 0px 5px 28px 2px rgba(0,0,0,0.75);
+}
+
+.blood{
+	background-color: #418BCA;
+	height: 150px;
+	margin-top: 20px;
+	/*border: 2px solid red;*/
+	text-align: center;
+	border-radius: 20px 0px 20px 0px;
+	transition: all 0.5s;
+}
+
+.blood:hover{
+	border-radius: 20px;
+	box-shadow: 0px 5px 28px 2px rgba(0,0,0,0.75);
+}
+
+.event{
+	background-color: #656869;
+	height: 150px;
+	margin-top: 20px;
+	margin-left: 15px;
+	/*border: 2px solid red;*/
+	text-align: center;
+	border-radius: 20px 0px 20px 0px;
+	transition: all 0.5s;
+}
+
+.event:hover{
+	border-radius: 20px;
+	box-shadow: 0px 5px 28px 2px rgba(0,0,0,0.75);
+}
+
+.cost{
+	background-color: #8FAE36;
+	height: 150px;
+	margin-top: 20px;
+	margin-left: 15px;
+	/*border: 2px solid red;*/
+	text-align: center;
+	border-radius: 20px 0px 20px 0px;
+	transition: all 0.5s;
+}
+
+.cost:hover{
+	border-radius: 20px;
+	box-shadow: 0px 5px 28px 2px rgba(0,0,0,0.75);
+}
