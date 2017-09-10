@@ -18,6 +18,8 @@
 	<title>Main Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/mainpage.css">
 </head>
@@ -82,98 +84,3 @@
 
 						<!-- right body start -->
 						<div class="right-body col-md-9">
-							
-							<!-- right body content start -->
-
-							<!-- first row start -->
-							<div class="row">
-								<a href="admin-noticeboard.php">
-								<div class="notice col-md-3 col-md-offset-1">
-									<h1 class="glyphicon glyphicon-th-list"></h1>
-									<h3>NOTICE BOARD</h3>
-								</div>
-								</a>
-
-								
-								<a href="admin-frontpage.php">
-								<div class="front-site col-md-3">
-									<h1 class="glyphicon glyphicon-credit-card"></h1>
-									<h3>FRONT SITE</h3>
-								</div>
-								</a>
-
-								<a href="">
-								<div class="users col-md-3">
-									<h1 class="glyphicon glyphicon-user"></h1>
-									<h3>USER MANAGE</h3>
-								</div>
-								</a>
-								
-							</div>
-							<!-- first row end -->
-
-
-
-							<!-- second row start -->
-							<div class="row">
-								<a href="admin-blood.php">
-								<div class="blood col-md-3 col-md-offset-1">
-									<h1 class="glyphicon glyphicon-tint"></h1>
-									<h3>BLOOD BANK</h3>
-								</div>
-								</a>
-
-
-								<a href="admin-event.php">
-								<div class="event col-md-3">
-									<h1 class="glyphicon glyphicon-bullhorn"></h1>
-									<h3>EVENT MANAGER</h3>
-								</div>
-								</a>
-
-								<a href="">
-								<div class="cost col-md-3">
-									<h1 class="glyphicon glyphicon-usd"></h1>
-									<h3>COST MANAGER</h3>
-								</div>
-								</a>
-
-
-								<a href="admin-blog.php">
-								<div class="blog col-md-3">
-									<h1 class="glyphicon glyphicon-edit col-md-offset-1"></h1>
-									<h3>NEWS/BLOG</h3>
-								</div>
-								</a>
-							</div>
-							<!-- second row end -->
-
-
-							
-
-
-							<!-- right body content end -->
-
-						</div>
-						<!-- right body end -->
-					</div>
-
-					
-
-
-				</div>
-			</div>
-
-			<!-- main body end -->
-
-		</div>
-		<!-- main class end -->
-
-	</div>
-
-</div>
-
-<!-- container end -->
-
-</body>
-</html>

@@ -7,7 +7,7 @@ $pass = new db();
 
 //check is session is established
 	if(!isset($_SESSION['name'])){
-		header("location:admin-login.php");
+		header("location:user-login.php");
 	}
 ?>
 <!DOCTYPE html>
@@ -49,7 +49,7 @@ $pass = new db();
 
 						<div class="right-header col-md-6">
 							<h3>Welcome <?php echo $_SESSION['name']; ?></h3>
-							<a class="" href="admin-logout.php"><span class="glyphicon glyphicon-off"></span></a>
+							<a class="" href="user-logout.php"><span class="glyphicon glyphicon-off"></span></a>
 						</div>
 					</div>
 				</div>
@@ -66,13 +66,13 @@ $pass = new db();
 					<div class="row">
 						<!-- left body start -->
 						<div class="left-body col-md-3">
-							<h3 style="color:white;text-align: center;"><a href="home.php">Admin Dashboard</a></h3>
+							<h3 style="color:white;text-align: center;"><a href="user-dashboard.php">Users Dashboard</a></h3>
 							<hr>
-							<a href="admin-make.php"><h4>Manage Admin</h4></a>
-							<hr style="">
-							<a href=""><h4>Change Password</h4></a>
+							<a href="user-update.php"><h4>Update Profile</h4></a>
 							<hr>
-							<a href="admin-logout.php"><h4>Logout</h4></a>
+							<a href="user-password.php"><h4>Change Password</h4></a>
+							<hr>
+							<a href="user-logout.php"><h4>Logout</h4></a>
 							<hr>
 						</div>
 						<!-- left body end -->
@@ -90,7 +90,7 @@ $pass = new db();
 									if(isset($_POST['change_pass'])){
 										//get user old password
 										$u_name = $_SESSION['name'];
-										$get = "select * from admin where username='$u_name'";
+										$get = "select * from users where username='$u_name'";
 										$g_res = $pass->custom_query($pdo,$get);
 										foreach ($g_res as $value) {
 											$get_old = $value['password'];
@@ -100,7 +100,7 @@ $pass = new db();
 										$given_new_pass = md5($_POST['new_pass']);
 
 										if($get_old == $given_old_pass){
-											$update_pass_q = "update admin set password='$given_new_pass' where username='$u_name'";
+											$update_pass_q = "update users set password='$given_new_pass' where username='$u_name'";
 											$pass->custom_query($pdo,$update_pass_q);
 											echo "<p class='alert alert-success'>Password Updated Successfully.</p>";
 										}else{

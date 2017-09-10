@@ -188,7 +188,8 @@
 									<div class="row">
 
 										<?php
-											$get_all = $notice->getalldata($pdo , "noticeboard");
+											$ge_q = "select * from noticeboard ORDER BY id DESC";
+											$get_all = $notice->custom_query($pdo , $ge_q);
 
 											foreach ($get_all as $value) {
 												

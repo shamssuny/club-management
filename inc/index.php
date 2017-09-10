@@ -323,7 +323,8 @@
 					<!-- footer start -->
 					<div class="row">
 						<div class="footer-main col-md-12">
-							<a href="admin-login.php">Admin Login</a>
+							<a href="admin-login.php">Admin Login</a> ||
+							<a href="user-login.php">User Login</a>
 							<h3>&copy; 2017 All Rights Reserverd !</h3>
 						</div>
 					</div>

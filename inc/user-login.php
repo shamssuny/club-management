@@ -6,20 +6,13 @@
 	//start session and check if session already there
 	session_start();
 	if(isset($_SESSION['name'])){
-		$nam = $_SESSION['name'];
-		$chek_u_q = "select * from admin where username='$nam'";
-		$re = $admin->custom_query($pdo,$chek_u_q);
-
-		if($re->rowCount() == 1){
-			header("location:home.php");
-		}
-		
+		header("location:user-dashboard.php");
 	}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin Login</title>
+	<title>User Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
@@ -34,7 +27,7 @@
 		<div class="main col-md-12">
 			<div class="row">
 				<div class="login-area ">
-					<h2><b>Admin Login</b></h2>
+					<h2><b>User Login</b></h2>
 					<?php
 
 						//check for button press
@@ -45,7 +38,7 @@
 
 							if(!empty($username) && !empty($password)){
 								//query data
-								$login = "select * from admin where username='$username' and password = '$password'";
+								$login = "select * from users where username='$username' and password = '$password'";
 								
 								$admin_result = $admin->custom_query($pdo , $login);
 								//check if find only one data
@@ -57,7 +50,8 @@
 									foreach ($admin_result as $value) {
 										
 										$_SESSION['name'] = $value['username'];
-										header("refresh:3;url=home.php");
+										$_SESSION['id'] = $value['uid'];
+										header("refresh:3;url=user-dashboard.php");
 									}
 								}else{
 									echo "<p class='alert alert-danger'>Username Or Password aren't match!</p>";
@@ -74,6 +68,7 @@
 						<input class="btn btn-success btn-lg" type="submit" name="submit" value="Log Into Portal">
 					</form>
 					<a href="index.php">Go to Site</a>
+					<p>Not Registered ? Register <a href="user-register.php">here</a></p>
 				</div>
 			</div>
 		</div>

@@ -32,11 +32,33 @@
 			//create table for noticeboard
 			$notice_board = "create table if not EXISTS noticeboard (id INT primary key AUTO_INCREMENT,notice_title varchar(300),notice_details text,mark varchar(200))";
 			$pdo->query($notice_board);
+
+			//create table for users
+			$create_user = "create table if not EXISTS users (uid int primary key AUTO_INCREMENT,username varchar(200),email varchar(300),password varchar(300),name varchar(300),blood varchar(20),contact varchar(30))";
+			$pdo->query($create_user);
+
+			//create event table 
+			$event_q = "create table if not EXISTS events (ev_id int primary key AUTO_INCREMENT,name varchar(300),detail text,new varchar(20))";
+			$pdo->query($event_q);
+
+			//event register table
+			$ev_reg_table = "create table if not EXISTS event_reg_users (reg_id int primary key AUTO_INCREMENT,uid int,eid int,apprv varchar(20),foreign key (uid) REFERENCES users(uid),foreign key (eid) REFERENCES events(ev_id))";
+			$pdo->query($ev_reg_table);
+
+			//create blog table
+			$blog_table = "create table if not exists blog (b_id int primary key AUTO_INCREMENT,title varchar(300),detail text)";
+			$pdo->query($blog_table);
 		}
 
 
 		public function getalldata($pdo, $table_name){
 			$all_query = "select * from ".$table_name;
+			$output = $pdo->query($all_query);
+			return $output;
+		}
+
+		public function getalldatadesc($pdo, $table_name,$order){
+			$all_query = "select * from ".$table_name." ORDER BY ".$order." DESC";
 			$output = $pdo->query($all_query);
 			return $output;
 		}
