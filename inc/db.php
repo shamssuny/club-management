@@ -48,6 +48,10 @@
 			//create blog table
 			$blog_table = "create table if not exists blog (b_id int primary key AUTO_INCREMENT,title varchar(300),detail text)";
 			$pdo->query($blog_table);
+
+			//create cost table
+			$cost_query = "create table if not exists cost (c_id int primary key AUTO_INCREMENT,name varchar(500),date varchar(200),cost DOUBLE)";
+			$pdo->query($cost_query);
 		}
 
 

@@ -102,7 +102,7 @@
 								</div>
 								</a>
 
-								<a href="">
+								<a href="admin-usermanage.php">
 								<div class="users col-md-3">
 									<h1 class="glyphicon glyphicon-user"></h1>
 									<h3>USER MANAGE</h3>
@@ -131,7 +131,7 @@
 								</div>
 								</a>
 
-								<a href="">
+								<a href="admin-cost.php">
 								<div class="cost col-md-3">
 									<h1 class="glyphicon glyphicon-usd"></h1>
 									<h3>COST MANAGER</h3>

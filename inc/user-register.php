@@ -19,7 +19,7 @@
 
 	<style type="text/css">
 		.main-area{
-			height: 100vh;
+			
 			background-image: url('img/banner1.jpg');
 		}
 		.register-area{
