@@ -41,8 +41,10 @@
 				if(isset($_GET['del'])){
 					$user_id = $_GET['user'];
 					$user_del_from_event = "delete from event_reg_users where uid='$user_id'";
+					$user_del_from_blog_comment = "delete from blog_comment where uid='$user_id'";
 					$user_del_from_user = "delete from users where uid='$user_id'";
 					$um->custom_query($pdo,$user_del_from_event);
+					$um->custom_query($pdo,$user_del_from_blog_comment);
 					$um->custom_query($pdo,$user_del_from_user);
 					echo "<p class='alert alert-success'><b>User Deleted Successfully!</b></p>";
 				}

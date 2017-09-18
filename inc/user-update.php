@@ -17,8 +17,10 @@ $up = new db();
 					$gnum = $_POST['unum'];
 					$gblood = $_POST['blood'];
 					$gid = $_SESSION['id'];
-					if (!empty($gmail) && !empty($grname) &&!empty($gnum) && !empty($gblood)) {
-						$up_user_q = "update users SET email='$gmail',name='$grname',blood='$gblood',contact='$gnum' where uid='$gid'";
+					$gdoner = $_POST['doner'];
+					$gaddr = $_POST['addr'];
+					if (!empty($gmail) && !empty($grname) &&!empty($gnum) && !empty($gblood) && !empty($gdoner)&& !empty($gaddr)) {
+						$up_user_q = "update users SET email='$gmail',name='$grname',blood='$gblood',contact='$gnum',doner='$gdoner',location='$gaddr' where uid='$gid'";
 						$up->custom_query($pdo,$up_user_q);
 						echo "<p class='alert alert-success text-center'>Update Data Successfull!</p>";	
 					}else{
@@ -64,8 +66,14 @@ $up = new db();
 					?>
 					
 					<?php  ?>
-				</select>
-				<br>
+				</select><br>
+				<label>Blood Doner? : </label>
+
+				<input type="radio" name="doner" value="YES" <?php if($value['doner']=="YES"){echo "Checked";}; ?>>Yes
+				<input type="radio" name="doner" value="NO" <?php if($value['doner']=="NO"){echo "Checked";}; ?>>NO
+				<br><br>
+				<label>Your Adress: <span> (Please Give Detail Info For Search Perpose)</span></label>
+				<textarea class="form-control" name="addr" placeholder="Your Address"><?php echo $value['location']; ?></textarea><br>
 				<input class="btn btn-primary" type="submit" name="submit" value="Update Info">
 				<?php } ?>
 			</form>

@@ -34,7 +34,7 @@
 			$pdo->query($notice_board);
 
 			//create table for users
-			$create_user = "create table if not EXISTS users (uid int primary key AUTO_INCREMENT,username varchar(200),email varchar(300),password varchar(300),name varchar(300),blood varchar(20),contact varchar(30))";
+			$create_user = "create table if not EXISTS users (uid int primary key AUTO_INCREMENT,username varchar(200),email varchar(300),password varchar(300),name varchar(300),blood varchar(20),doner varchar(20),contact varchar(30),location text)";
 			$pdo->query($create_user);
 
 			//create event table 
@@ -52,6 +52,10 @@
 			//create cost table
 			$cost_query = "create table if not exists cost (c_id int primary key AUTO_INCREMENT,name varchar(500),date varchar(200),cost DOUBLE)";
 			$pdo->query($cost_query);
+
+			//create blog comment table
+			$blog_comment = "create table if not exists blog_comment (b_c_id int primary key AUTO_INCREMENT,uid int,bid int,comment text,foreign key (uid) REFERENCES users(uid),foreign key (bid) REFERENCES blog (b_id))";
+			$pdo->query($blog_comment);
 		}
 
 

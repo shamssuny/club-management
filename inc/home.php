@@ -138,16 +138,25 @@
 								</div>
 								</a>
 
+							</div>
+							<!-- second row end -->
 
+
+							<!-- third row start -->
+							<div class="row">
+								
 								<a href="admin-blog.php">
-								<div class="blog col-md-3">
+								<div class="blog col-md-3 col-md-offset-1">
 									<h1 class="glyphicon glyphicon-edit col-md-offset-1"></h1>
 									<h3>NEWS/BLOG</h3>
 								</div>
 								</a>
-							</div>
-							<!-- second row end -->
 
+
+								
+
+							</div>
+							<!-- third row end -->
 
 							
 

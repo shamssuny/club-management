@@ -30,7 +30,8 @@
 		
 		<h2 class="text-center">Search Blood</h2>
 
-		<form class="form-group text-center" action="" method="POST">
+		<form class="form-group form-inline text-center" action="" method="POST">
+			<label>Blood Group:</label>
 			<select class="form-control" name="blood">
 				<option>A+</option>
 				<option>A-</option>
@@ -41,6 +42,8 @@
 				<option>O+</option>
 				<option>O-</option>
 			</select>
+			<label>Search Location:</label>
+			<input style="margin: 0;" class="form-control" type="text" name="location" placeholder="Search Location"><br>
 			<input class="btn btn-primary btn-block" type="submit" name="submit" value="Search">
 			<hr style="border-color: black;">
 		</form>
@@ -54,8 +57,8 @@
 					//search for the blood
 					if(isset($_POST['submit'])){
 						$grp = $_POST['blood'];
-
-						$find_b_q = "select * from users where blood='$grp'";
+						$loc = $_POST['location'];
+						$find_b_q = "select * from users where blood='$grp' and location LIKE '%$loc%'";
 						$find_b = $bl->custom_query($pdo,$find_b_q);
 
 						$i = 1;
@@ -64,19 +67,25 @@
 
 
 				<div class="bl-det-main col-md-12">
-					<div class="bl-det col-md-4">
+					<div class="bl-det col-md-3">
 						<b><?php echo $i.". ".$value['name']; ?></b>
 					</div>
 
 
-					<div class="bl-det col-md-4 text-center">
+					<div class="bl-det col-md-3 text-center">
 						<p><?php echo $value['contact']; ?></p>
 						
 					</div>
 
 
-					<div class="bl-det col-md-4 text-center">
+					<div class="bl-det col-md-3 text-center">
 						<p><?php echo $value['blood'];  ?></p>
+						
+					</div>
+
+
+					<div class="bl-det col-md-3 text-center">
+						<p><?php echo $value['location'];  ?></p>
 						
 					</div>
 				</div>

@@ -31,6 +31,15 @@
 				if(isset($_GET['view'])){
 					$pu = $_GET['view'];
 				}
+				//delete a comment
+				if(isset($_GET['delcom'])){
+					$c_id = $_GET['cid'];
+					$get_com = "delete from blog_comment where bid='$pu' and b_c_id='$c_id'";
+					$bsh->custom_query($pdo,$get_com);
+					echo "<p class='alert alert-danger text-center'>Commnet Deleted !</p>";
+				}
+
+
 				//update post
 				if(isset($_POST['update'])){
 					$nam = $_POST['blname'];
@@ -47,8 +56,11 @@
 
 				//delete post
 				if(isset($_GET['del'])){
+					$del_com_blog = "delete from blog_comment where bid='$pu'";
 					$del_q = "delete from blog where b_id='$pu'";
+					$bsh->custom_query($pdo,$del_com_blog);
 					$bsh->custom_query($pdo,$del_q);
+
 					header("location:admin-blog.php?d=1");
 
 				}
@@ -83,6 +95,62 @@
 				}
 			?>
 		</div>
+
+
+
+		<!-- comment management -->
+		<div class="admin-comment-main col-md-12">
+			<hr style="border-color: black;">
+			<h3>Comments</h3>
+			<hr style="border-color: black;">
+
+
+			<div class="all-comments col-md-12">
+
+				<?php
+					//get comments for the post.
+					if(isset($_GET['view'])){
+
+						$get_blog_id = $_GET['view'];
+						$get_blog_query = "select * from blog_comment where bid='$get_blog_id'";
+						$get_comment = $bsh->custom_query($pdo,$get_blog_query);
+
+						foreach ($get_comment as $coo) {
+							$comment_id = $coo['b_c_id'];
+				?>
+
+				
+				<div class="comment-main col-md-12">
+					
+					<h4>
+						<?php
+							//get user name for the comment
+							$usid = $coo['uid'];
+							$get_user = "select * from users where uid='$usid'";
+							$get_data = $bsh->custom_query($pdo,$get_user);
+							foreach ($get_data as $usr) {
+								echo $usr['name'];
+							}
+						?>
+					</h4>
+
+					<p><?php echo $coo['comment']; ?></p>
+					<a href="<?php echo '?view='.$get_blog_id.'&delcom=1&cid='.$comment_id; ?>" style="color:red;text-decoration: underline;">delete</a>
+					<hr style="border-color: grey;">
+
+				</div>
+
+
+				<?php		
+						}
+					}
+				?>
+
+			</div>
+
+		</div>
+
+
 
 	</div>
 

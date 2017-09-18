@@ -51,9 +51,11 @@
 						$umail = $_POST['mail'];
 						$upass = md5($_POST['password']);
 						$ublood = $_POST['blood'];
+						$udoner = $_POST['don'];
+						$uadd = $_POST['addr'];
 						$umbl = $_POST['mbl'];
 
-						if( !empty($urname) && !empty($uname) && !empty($umail) && !empty($upass) && !empty($ublood) && !empty($umbl)){
+						if( !empty($urname) && !empty($uname) && !empty($umail) && !empty($upass) && !empty($ublood) && !empty($umbl) && !empty($udoner) && !empty($uadd)){
 							//check exixst user
 							$chk_q = "select * from users where username='$uname'";
 							$chk_r = $ur->custom_query($pdo,$chk_q);
@@ -61,7 +63,7 @@
 								echo "<p class='alert alert-danger text-center'>Username Already Exists!</p>";
 							}
 							else{
-								$insert_user = "insert into users (username,email,password,name,blood,contact) values ('$uname','$umail','$upass','$urname','$ublood','$umbl')";
+								$insert_user = "insert into users (username,email,password,name,blood,doner,contact,location) values ('$uname','$umail','$upass','$urname','$ublood','$udoner','$umbl','$uadd')";
 								$ur->custom_query($pdo,$insert_user);
 								echo "<p class='alert alert-success text-center'>Register Successfull! <a href='user-login.php'>LOGIN to continue!</a></p>";
 							}
@@ -88,8 +90,13 @@
 						<option value="O+">O+</option>
 						<option value="O-">O-</option>
 					</select><br>
+					<label>Blood Doner?:  </label>
+					<input type="radio" name="don" value="YES">Yes
+					<input type="radio" name="don" value="NO">No<br><br>
 					<label>Valid Mobile Number:</label>
 					<input class="form-control" type="number" name="mbl"><br>
+					<label>Your Adress: <span> (Please Give Detail Info For Search Perpose)</span></label>
+					<textarea class="form-control" name="addr" rows="4" placeholder="Your Address:"></textarea><br>
 					<input class="btn btn-success" type="submit" name="submit" value="Register"><br>
 					
 					<p>Go Back to <a href="index.php">Site</a></p>
