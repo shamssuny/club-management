@@ -67,7 +67,7 @@
 
 					<div class="row">
 						<!-- left body start -->
-						<div class="left-body col-md-3">
+						<div class="left-body col-md-2">
 							<h3 style="color:white;text-align: center;"><a href="home.php">Admin Dashboard</a></h3>
 							<hr>
 							<a href="admin-make.php"><h4>Manage Admin</h4></a>
@@ -81,10 +81,18 @@
 
 
 						<!-- right body start -->
-						<div class="right-body col-md-9">
+						<div class="right-body col-md-10">
+
+							<div class="back-vid col-md-12">
+								<p></p>
+								<video autoplay="true" loop="" >
+									<source src="img/vid.mp4" type="video/mp4">
+								</video>
+							</div>
 							
 							<!-- right body content start -->
 
+							<div class="all-menus col-md-12">
 							<!-- first row start -->
 							<div class="row">
 								<a href="admin-noticeboard.php">
@@ -147,18 +155,36 @@
 								
 								<a href="admin-blog.php">
 								<div class="blog col-md-3 col-md-offset-1">
-									<h1 class="glyphicon glyphicon-edit col-md-offset-1"></h1>
+									<h1 style="margin-left: 0;" class="glyphicon glyphicon-edit col-md-offset-1"></h1>
 									<h3>NEWS/BLOG</h3>
 								</div>
 								</a>
 
+
+
+
+								<a href="admin-alumni.php">
+								<div class="alumni col-md-3 ">
+									<h1 style="margin-left: 0;" class="glyphicon glyphicon-king col-md-offset-1"></h1>
+									<h3>ALUMNI</h3>
+								</div>
+								</a>
+
+
+
+								<a href="admin-project.php">
+								<div class="projects col-md-3 ">
+									<h1 style="margin-left: 0;" class="glyphicon glyphicon-education col-md-offset-1"></h1>
+									<h3>Club Projects</h3>
+								</div>
+								</a>
 
 								
 
 							</div>
 							<!-- third row end -->
 
-							
+							</div>
 
 
 							<!-- right body content end -->
