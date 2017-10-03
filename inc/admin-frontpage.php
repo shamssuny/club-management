@@ -69,6 +69,8 @@
 							<hr style="">
 							<a href="admin-password.php"><h4>Change Password</h4></a>
 							<hr>
+							<a href="admin-help.php"><h4>Help Center</h4></a>
+							<hr>
 							<a href="admin-logout.php"><h4>Logout</h4></a>
 							<hr>
 						</div>
@@ -114,13 +116,18 @@
 											$tmp = $_FILES['image']['tmp_name'];
 											$size = $_FILES['image']['size'];
 											//echo "$size";
-											if(exif_imagetype($tmp) != IMAGETYPE_JPEG || $size > 1485760 ){
-												echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+											if(!empty($file) && !empty($tmp)){
+												if(exif_imagetype($tmp) != IMAGETYPE_JPEG || $size > 1485760 ){
+													echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+												}else{
+													unlink("img/".$file);
+													move_uploaded_file($tmp,"img/".$file);
+													echo "<p class='alert alert-success'>Slider Image Updated !</p>";
+
+
+												}
 											}else{
-												move_uploaded_file($tmp,"img/".$file);
-												echo "<p class='alert alert-success'>Slider Image Updated !</p>";
-
-
+												echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
 											}
 											
 										}
@@ -149,15 +156,20 @@
 										$tmp = $_FILES['image']['tmp_name'];
 										$size = $_FILES['image']['size'];
 										//echo "$size";
-										if(exif_imagetype($tmp) != IMAGETYPE_JPEG || $size > 1485760 ){
-											echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+										if(!empty($file) && !empty($tmp)){
+											if(exif_imagetype($tmp) != IMAGETYPE_JPEG || $size > 1485760 ){
+												echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+											}else{
+												unlink("img/".$file);
+												move_uploaded_file($tmp,"img/".$file);
+												$update_t1 = "update frontpage set team1_name='$t1_name',team1_title='$t1_pos' where id=1";
+												$front->custom_query($pdo , $update_t1);
+												echo "<p class='alert alert-success'> Team 1 Data Updated !</p>";
+
+
+											}
 										}else{
-											move_uploaded_file($tmp,"img/".$file);
-											$update_t1 = "update frontpage set team1_name='$t1_name',team1_title='$t1_pos' where id=1";
-											$front->custom_query($pdo , $update_t1);
-											echo "<p class='alert alert-success'> Team 1 Data Updated !</p>";
-
-
+											"<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
 										}
 									}
 
@@ -174,15 +186,20 @@
 										$tmp = $_FILES['image']['tmp_name'];
 										$size = $_FILES['image']['size'];
 										//echo "$size";
-										if(exif_imagetype($tmp) != IMAGETYPE_JPEG || $size > 1485760 ){
-											echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+										if(!empty($file) && !empty($tmp)){
+											if(exif_imagetype($tmp) != IMAGETYPE_JPEG || $size > 1485760 ){
+												echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+											}else{
+												unlink("img/".$file);
+												move_uploaded_file($tmp,"img/".$file);
+												$update_t1 = "update frontpage set team2_name='$t1_name',team2_title='$t1_pos' where id=1";
+												$front->custom_query($pdo , $update_t1);
+												echo "<p class='alert alert-success'> Team 2 Data Updated !</p>";
+
+
+											}
 										}else{
-											move_uploaded_file($tmp,"img/".$file);
-											$update_t1 = "update frontpage set team2_name='$t1_name',team2_title='$t1_pos' where id=1";
-											$front->custom_query($pdo , $update_t1);
-											echo "<p class='alert alert-success'> Team 2 Data Updated !</p>";
-
-
+											echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
 										}
 									}
 
@@ -199,16 +216,21 @@
 										$tmp = $_FILES['image']['tmp_name'];
 										$size = $_FILES['image']['size'];
 										//echo "$size";
-										if(exif_imagetype($tmp) != IMAGETYPE_JPEG || $size > 1485760 ){
-											echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+										if(!empty($file) && !empty($tmp)){
+											if(exif_imagetype($tmp) != IMAGETYPE_JPEG || $size > 1485760 ){
+												echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+											}else{
+												unlink("img/".$file);
+												move_uploaded_file($tmp,"img/".$file);
+												$update_t1 = "update frontpage set team3_name='$t1_name',team3_title='$t1_pos' where id=1";
+												$front->custom_query($pdo , $update_t1);
+												echo "<p class='alert alert-success'> Team 3 Data Updated !</p>";
+
+
+											}
 										}else{
-											move_uploaded_file($tmp,"img/".$file);
-											$update_t1 = "update frontpage set team3_name='$t1_name',team3_title='$t1_pos' where id=1";
-											$front->custom_query($pdo , $update_t1);
-											echo "<p class='alert alert-success'> Team 3 Data Updated !</p>";
-
-
-										}
+											echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+										}	
 									}
 
 
@@ -223,15 +245,20 @@
 										$tmp = $_FILES['image']['tmp_name'];
 										$size = $_FILES['image']['size'];
 										//echo "$size";
-										if(exif_imagetype($tmp) != IMAGETYPE_JPEG || $size > 1485760 ){
-											echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+										if(!empty($file) && !empty($tmp)){
+											if(exif_imagetype($tmp) != IMAGETYPE_JPEG || $size > 1485760 ){
+												echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
+											}else{
+												unlink("img/".$file);
+												move_uploaded_file($tmp,"img/".$file);
+												$update_t1 = "update frontpage set team4_name='$t1_name',team4_title='$t1_pos' where id=1";
+												$front->custom_query($pdo , $update_t1);
+												echo "<p class='alert alert-success'> Team 4 Data Updated !</p>";
+
+
+											}
 										}else{
-											move_uploaded_file($tmp,"img/".$file);
-											$update_t1 = "update frontpage set team4_name='$t1_name',team4_title='$t1_pos' where id=1";
-											$front->custom_query($pdo , $update_t1);
-											echo "<p class='alert alert-success'> Team 4 Data Updated !</p>";
-
-
+											echo "<p class='alert alert-danger'>Wrong type file or size . Size Should be under 1MB and file should be jpg.</p>";
 										}
 									}
 

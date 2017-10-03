@@ -69,12 +69,14 @@
 
 					<div class="row">
 						<!-- left body start -->
-						<div class="left-body col-md-3">
+						<div class="left-body col-md-3" style="text-align: left;">
 							<h3 style="color:white;text-align: center;"><a href="home.php">Admin Dashboard</a></h3>
 							<hr>
 							<a href="admin-make.php"><h4>Manage Admin</h4></a>
 							<hr style="">
 							<a href="admin-password.php"><h4>Change Password</h4></a>
+							<hr>
+							<a href="admin-help.php"><h4>Help Center</h4></a>
 							<hr>
 							<a href="admin-logout.php"><h4>Logout</h4></a>
 							<hr>

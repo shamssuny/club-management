@@ -230,6 +230,9 @@
 								<div class="notice col-md-6">
 									<h3>Latest notices</h3>
 									<div class="notice-outfit">
+										
+										<div class="notice-sc" >
+											<marquee behavior="scroll" direction="up" style="height:145px;width: 100%;text-align: center;" onmouseover="this.stop();" onmouseout="this.start();" scrolldelay="150">
 										<?php
 												//get latest notice from noticeboard
 												$not_query = "select * from noticeboard where mark='yes'";
@@ -245,8 +248,11 @@
 										<?php
 											} //end of latest notice
 										?>
+											</marquee>
+										</div>
 
 									</div>
+								
 									<a href="" style="color: white;">All Notices</a>
 								</div>
 
@@ -254,7 +260,19 @@
 								<div class="event col-md-6">
 									<h3>Latest Events</h3>
 									<div class="event-outfit">
-										Up Coming
+										<div class="event-sc">
+											<marquee behavior="scroll" direction="up" style="height:145px;width: 100%;" onmouseover="this.stop();" onmouseout="this.start();" scrolldelay="150">
+												<?php
+													//get latest event
+													$get_ev = "select * from events where new='yes'";
+													$ev = $in->custom_query($pdo,$get_ev);
+
+													foreach ($ev as $value) {
+														echo "<b><p style='border-bottom:2px dotted white;text-align:center;'>".$value['name']."</p></b>";
+													}
+												?>
+											</marquee>
+										</div>
 									</div>
 									<a href="" style="color: white;">All Events</a>
 								</div>

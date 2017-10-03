@@ -57,6 +57,27 @@
 				<h3>Notice Board</h3>
 			</div>
 		</a>
+
+		<a href="user-alumni.php">
+			<div class="idea col-md-3">
+				<p class="glyphicon glyphicon-user"></p>
+				<h3>Alumni's</h3>
+			</div>
+		</a>
+
+		<a href="user-project.php">
+			<div class="idea col-md-3">
+				<p class="glyphicon glyphicon-list-alt"></p>
+				<h3>Club Projects</h3>
+			</div>
+		</a>
+
+		<a href="user-help.php">
+			<div class="idea col-md-3">
+				<p class="glyphicon glyphicon-info-sign"></p>
+				<h3>Help Center</h3>
+			</div>
+		</a>
 	</div>
 </div>
 

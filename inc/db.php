@@ -56,6 +56,22 @@
 			//create blog comment table
 			$blog_comment = "create table if not exists blog_comment (b_c_id int primary key AUTO_INCREMENT,uid int,bid int,comment text,foreign key (uid) REFERENCES users(uid),foreign key (bid) REFERENCES blog (b_id))";
 			$pdo->query($blog_comment);
+
+			//create alumni table
+			$alumni = "create table if not exists alumni (al_id int primary key AUTO_INCREMENT,name varchar(200),email varchar(300),number varchar(20),address text,details text,img text)";
+			$pdo->query($alumni);
+
+			//create projects table
+			$project = "create table if not exists projects (id int primary key AUTO_INCREMENT, name varchar(500),author varchar(200),details text,file text)";
+			$pdo->query($project);
+
+			//help desk question table
+			$help_table = "create table if not exists help_question (q_id int primary key AUTO_INCREMENT,help_q text,uid int,chk varchar(10),foreign key (uid) REFERENCES users (uid))";
+			$pdo->query($help_table);
+
+			//help desk comment table
+			$help_comment = "create table if not exists help_answer (h_id int primary key AUTO_INCREMENT,q_id int,admin varchar(20),h_ans text,foreign key (q_id) REFERENCES help_question (q_id))";
+			$pdo->query($help_comment);
 		}
 
 

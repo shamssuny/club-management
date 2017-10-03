@@ -70,6 +70,8 @@
 							<hr style="">
 							<a href="admin-password.php"><h4>Change Password</h4></a>
 							<hr>
+							<a href="admin-help.php"><h4>Help Center</h4></a>
+							<hr>
 							<a href="admin-logout.php"><h4>Logout</h4></a>
 							<hr>
 						</div>
