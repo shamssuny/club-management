@@ -8,6 +8,16 @@
 	//check is session is established
 	if(!isset($_SESSION['name'])){
 		header("location:user-login.php");
+	}else{
+		$nam = $_SESSION['name'];
+		$chek_u_q = "select username from users where username='$nam'";
+		$re = $home->custom_query($pdo,$chek_u_q);
+
+		if(!$re->rowCount() == 1){
+			session_unset();
+			session_destroy();
+			header("location:user-login.php");
+		}
 	}
 ?>
 
@@ -69,7 +79,7 @@
 
 					<div class="row">
 						<!-- left body start -->
-						<div class="left-body col-md-3">
+						<div class="left-body col-md-2" style="text-align: left;">
 							<h3 style="color:white;text-align: center;"><a href="user-dashboard.php">Users Dashboard</a></h3>
 							<hr>
 							<a href="user-update.php"><h4>Update Profile</h4></a>
@@ -83,4 +93,4 @@
 
 
 						<!-- right body start -->
-						<div class="right-body col-md-9">
+						<div class="right-body col-md-10">

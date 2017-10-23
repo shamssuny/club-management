@@ -8,6 +8,16 @@ $make = new db();
 //check is session is established
 	if(!isset($_SESSION['name'])){
 		header("location:admin-login.php");
+	}else{
+		$nam = $_SESSION['name'];
+		$chek_u_q = "select username from admin where username='$nam'";
+		$re = $make->custom_query($pdo,$chek_u_q);
+
+		if(!$re->rowCount() == 1){
+			session_unset();
+			session_destroy();
+			header("location:admin-login.php");
+		}
 	}
 ?>
 <!DOCTYPE html>

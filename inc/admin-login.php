@@ -7,12 +7,15 @@
 	session_start();
 	if(isset($_SESSION['name'])){
 		$nam = $_SESSION['name'];
-		$chek_u_q = "select * from admin where username='$nam'";
+		$chek_u_q = "select username from admin where username='$nam'";
 		$re = $admin->custom_query($pdo,$chek_u_q);
 
 		if($re->rowCount() == 1){
 			header("location:home.php");
 		}
+
+		session_unset();
+		session_destroy();
 		
 	}
 ?>

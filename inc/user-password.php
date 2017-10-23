@@ -1,90 +1,23 @@
 <?php
-//sessions
-session_start();
-//include db class
-include 'db.php';
+include 'user-head.php';
+
+//init
 $pass = new db();
-
-//check is session is established
-	if(!isset($_SESSION['name'])){
-		header("location:user-login.php");
-	}
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Change Password</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-	<link rel="stylesheet" type="text/css" href="css/admin-password.css">
-</head>
-<body>
+<style type="text/css">
+	.change-pass{
+		text-align: center;
+	}
 
-<!-- main -->
-
-<div class="container-fluid">
-	
-	<div class="row">
-		
-		<div class="main col-md-12">
-			
-			<!-- header start -->
-			<div class="row">
-				<div class="header col-md-12">
-					<div class="row">
-						<div class="left-header col-md-6">
-							<h3>
-								<?php 
-									//get club name from frontpage table
-									$get_club = "select club_name from frontpage where id=1";
-									$data = $pass->custom_query($pdo,$get_club);
-
-									foreach ($data as $value) {
-										echo $value['club_name'];
-									}
-								 ?>
-							</h3>
-						</div>
-
-						<div class="right-header col-md-6">
-							<h3>Welcome <?php echo $_SESSION['name']; ?></h3>
-							<a class="" href="user-logout.php"><span class="glyphicon glyphicon-off"></span></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- header end -->
-
-
-
-			<!-- main body strat -->
-			<div class="row">
-				
-				<div class="main-body col-md-12">
-					
-					<div class="row">
-						<!-- left body start -->
-						<div class="left-body col-md-3">
-							<h3 style="color:white;text-align: center;"><a href="user-dashboard.php">Users Dashboard</a></h3>
-							<hr>
-							<a href="user-update.php"><h4>Update Profile</h4></a>
-							<hr>
-							<a href="user-password.php"><h4>Change Password</h4></a>
-							<hr>
-							<a href="user-logout.php"><h4>Logout</h4></a>
-							<hr>
-						</div>
-						<!-- left body end -->
-
-
-
-						<!-- right body start -->
-						<div class="right-body col-md-9">
+	.change-pass input{
+		margin-top: 10px;
+	}
+</style>
 							
 							<div class="row">
 								
-								<div class="change-pass col-md-6 col-md-offset-3">
+								<div class="change-pass col-md-10 col-md-offset-1">
 								<?php
 									//check the old pass and make new one
 									if(isset($_POST['change_pass'])){
@@ -121,24 +54,4 @@ $pass = new db();
 
 							</div>
 
-						</div>
-						<!-- right body end -->
-
-
-					</div>
-
-				</div>
-
-			</div>
-			<!-- main body end -->
-
-
-		</div>
-
-	</div>
-
-</div>
-
-<!-- man end -->
-</body>
-</html>
+<?php include 'user-footer.php'; ?>

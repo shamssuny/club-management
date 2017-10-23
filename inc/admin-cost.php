@@ -148,17 +148,19 @@
           		if(!empty($cost_name)&&!empty($cost_date)&&!empty($cost_value)){
           			$cost_in_q = "insert into cost (name,date,cost) values ('$cost_name','$cost_date','$cost_value')";
           			$co->custom_query($pdo,$cost_in_q);
-          			header("location:admin-cost.php?success=1");
+          			//header("refresh: 0; url=admin-cost.php?success=1");
+          			echo '<script>window.location="admin-cost.php?success=1"</script>';
           		}else{
-          			header("location:admin-cost.php?error=1");
+          			//header("location:admin-cost.php?error=1");
+          			echo '<script>window.location="admin-cost.php?error=1"</script>';
           		}
           		
           	}
           ?>
           <form class="form-group" method="POST" action="">
-          	<input class="form-control" type="text" name="cname" placeholder="Cost Name"><br>
-          	<input class="form-control" type="date" name="cdate" placeholder="Cost Date"><br>
-          	<input class="form-control" type="number" name="tcost" placeholder="Cost Value"><br>
+          	<input class="form-control" type="text" name="cname" placeholder="Cost Name" required=""><br>
+          	<input class="form-control" type="date" name="cdate" placeholder="Cost Date" required=""><br>
+          	<input class="form-control" type="number" name="tcost" placeholder="Cost Value" required=""><br>
           	<input class="btn btn-warning" type="submit" name="make" value="Add Cost">
           </form>
           

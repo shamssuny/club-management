@@ -253,7 +253,7 @@
 
 									</div>
 								
-									<a href="" style="color: white;">All Notices</a>
+									<a href="user-notice.php" style="color: white;">All Notices</a>
 								</div>
 
 
@@ -274,7 +274,7 @@
 											</marquee>
 										</div>
 									</div>
-									<a href="" style="color: white;">All Events</a>
+									<a href="user-event.php" style="color: white;">All Events</a>
 								</div>
 
 							</div>

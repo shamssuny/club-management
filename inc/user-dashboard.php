@@ -11,6 +11,7 @@
 	.idea:hover{
 		border-radius: 0px;
 		box-shadow: 0px 5px 28px 2px rgba(0,0,0,0.75);
+		transform: scale(1.2,1.2);
 	}
 	.idea p{
 		font-size: 40px;
@@ -23,10 +24,45 @@
 	.idea p{
 		padding-top: 10px;
 	}
+
+	.back-vid{
+	margin:0;
+	padding: 0;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	/*transform: translate(-50%,-50%);
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;*/
+}
+
+.back-vid p{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:rgba(24,22,58,0.7);
+}
+
+.back-vid video{
+	height: 100%;
+	width: 100%;
+}
 </style>
 
 
 <div class="row">
+
+	<div class="back-vid col-md-12">
+		<p></p>
+		<video autoplay="true" loop="" >
+			<source src="img/vid.mp4" type="video/mp4">
+		</video>
+	</div>
+
 	<div class="dash-main text-center col-md-12">
 		<a href="user-event.php">
 			<div class="idea col-md-3">
