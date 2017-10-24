@@ -1,5 +1,5 @@
 <?php 
-	include 'header.php';
+	include 'event-header.php';
 ?>
 
 <?php
@@ -42,6 +42,7 @@
 					}
 				?>
 				<a class="btn btn-warning" href="admin-make-event.php">Make New Event</a>
+				<a class="btn btn-info" href="admin-make-vol.php">Make volunteer</a>
 				
 				<a style="float:right;" class="btn btn-success" href="admin-archive-event.php">Archive Events</a>
 			</div>

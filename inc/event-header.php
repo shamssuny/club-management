@@ -7,16 +7,23 @@
 
 	//check is session is established
 	if(!isset($_SESSION['name'])){
-		header("location:user-login.php");
+		header("location:admin-login.php");
 	}else{
+		$cnam = $_SESSION['name'];
+		$ch_ev_vol_q = "select username from event_vol where username='$cnam'";
+		$ch_ev_vol = $home->custom_query($pdo,$ch_ev_vol_q);
+		if($ch_ev_vol->rowCount() != 1){
+
 		$nam = $_SESSION['name'];
-		$chek_u_q = "select username from users where username='$nam'";
+		$chek_u_q = "select username from admin where username='$nam'";
 		$re = $home->custom_query($pdo,$chek_u_q);
 
 		if(!$re->rowCount() == 1){
 			session_unset();
 			session_destroy();
-			header("location:user-login.php");
+			header("location:admin-login.php");
+		}
+
 		}
 	}
 ?>
@@ -25,7 +32,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Users Area</title>
+	<title>Main Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<script src="js/jquery.min.js" type="text/javascript"></script>
@@ -64,7 +71,7 @@
 
 						<div class="right-header col-md-6">
 							<h3>Welcome <?php echo $_SESSION['name']; ?></h3>
-							<a class="" href="user-logout.php"><span class="glyphicon glyphicon-off"></span></a>
+							<a class="" href="admin-logout.php"><span class="glyphicon glyphicon-off"></span></a>
 						</div>
 					</div>
 				</div>
@@ -79,28 +86,20 @@
 
 					<div class="row">
 						<!-- left body start -->
-						<div class="left-body col-md-2" style="text-align: left;">
-							<h3 style="color:white;text-align: center;"><a href="user-dashboard.php">Users Dashboard</a></h3>
+						<div class="left-body col-md-3" style="text-align: left;">
+							<h3 style="color:white;text-align: center;"><a href="home.php">Admin Dashboard</a></h3>
 							<hr>
-							<a href="user-update.php"><h4>Update Profile</h4></a>
+							<a href="admin-make.php"><h4>Manage Admin</h4></a>
+							<hr style="">
+							<a href="admin-password.php"><h4>Change Password</h4></a>
 							<hr>
-							<a href="user-password.php"><h4>Change Password</h4></a>
+							<a href="admin-help.php"><h4>Help Center</h4></a>
 							<hr>
-							<?php
-								//check user if he is a event admin
-								$uuu = $_SESSION['name'];
- 								$ch_uu_q = "select username from event_vol where username='$uuu'";
- 								$ch_uu = $home->custom_query($pdo,$ch_uu_q);
- 								if($ch_uu->rowCount() == 1){
- 									echo "<a href='admin-event.php'><h4>Event Manager</h4></a>";
- 									echo "<hr>";
- 								}
-							?>
-							<a href="user-logout.php"><h4>Logout</h4></a>
+							<a href="admin-logout.php"><h4>Logout</h4></a>
 							<hr>
 						</div>
 						<!-- left body end -->
 
 
 						<!-- right body start -->
-						<div class="right-body col-md-10">
+						<div class="right-body col-md-9">

@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'event-header.php'; ?>
 
 <?php
 	//initialize

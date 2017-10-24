@@ -72,6 +72,10 @@
 			//help desk comment table
 			$help_comment = "create table if not exists help_answer (h_id int primary key AUTO_INCREMENT,q_id int,admin varchar(20),h_ans text,foreign key (q_id) REFERENCES help_question (q_id))";
 			$pdo->query($help_comment);
+
+			//event volunteer table
+			$event_vol_t = "create table if not exists event_vol (vol_id int primary key AUTO_INCREMENT,uid int,username varchar(500),foreign key (uid) REFERENCES users (uid))";
+			$pdo->query($event_vol_t);
 		}
 
 
